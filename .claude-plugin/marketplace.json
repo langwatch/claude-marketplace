@@ -1,6 +1,7 @@
 {
   "name": "langwatch",
   "owner": { "name": "LangWatch" },
+  "description": "LangWatch's Claude Code plugin marketplace — expert agents and tooling for the LangWatch observability platform and the Scenario agent-testing framework.",
   "plugins": [
     {
       "name": "langwatch-experts",
