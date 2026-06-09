@@ -1,0 +1,33 @@
+{
+  "name": "langwatch-experts",
+  "description": "scenario-expert and langwatch-expert delegate-to agents, backed by the LangWatch MCP server (docs tools work with no API key; set the optional key to unlock traces/observability).",
+  "version": "0.1.0",
+  "author": { "name": "LangWatch" },
+  "homepage": "https://github.com/langwatch/claude-marketplace",
+  "repository": "https://github.com/langwatch/claude-marketplace",
+  "license": "MIT",
+  "keywords": ["langwatch", "scenario", "observability", "agent-testing", "mcp"],
+  "userConfig": {
+    "langwatch_api_key": {
+      "type": "string",
+      "title": "LangWatch API key (optional)",
+      "description": "Optional. Leave blank to use documentation tools only (zero-config). Set it to unlock live observability and platform tools: search_traces, get_trace, get_analytics, and the platform_* scenario/suite/run tools. Get a key at https://app.langwatch.ai.",
+      "sensitive": true
+    },
+    "langwatch_endpoint": {
+      "type": "string",
+      "title": "LangWatch endpoint (optional)",
+      "description": "Optional self-hosted/region override. Defaults to https://app.langwatch.ai when blank."
+    }
+  },
+  "mcpServers": {
+    "langwatch": {
+      "command": "npx",
+      "args": ["-y", "@langwatch/mcp-server"],
+      "env": {
+        "LANGWATCH_API_KEY": "${user_config.langwatch_api_key}",
+        "LANGWATCH_ENDPOINT": "${user_config.langwatch_endpoint}"
+      }
+    }
+  }
+}

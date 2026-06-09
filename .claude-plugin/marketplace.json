@@ -1,0 +1,11 @@
+{
+  "name": "langwatch",
+  "owner": { "name": "LangWatch" },
+  "plugins": [
+    {
+      "name": "langwatch-experts",
+      "source": "./plugins/langwatch-experts",
+      "description": "Expert agents for LangWatch & the Scenario agent-testing framework, backed by the live LangWatch MCP server. Domain judgment on your bench: writing/debugging scenario tests, reading traces, and the corrected mental models that prevent common mistakes."
+    }
+  ]
+}
