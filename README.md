@@ -20,6 +20,26 @@ The agents prefer live docs (and, with a key, live traces) over stale priors. **
 
 Found a gap in an expert's knowledge? [Open an issue](https://github.com/langwatch/claude-marketplace/issues) — contributions are welcome but never required.
 
+## Automation / CI
+
+The interactive install prompt is the normal way to set your key — paste it once and it's stored; change it any time by re-running the plugin config. The MCP server reads it from there on every launch.
+
+In a headless/scripted run (`claude --plugin-dir ... -p ...`) there is no prompt, so pass the key directly with `--mcp-config` instead:
+
+```json
+{
+  "mcpServers": {
+    "langwatch": {
+      "command": "npx",
+      "args": ["-y", "@langwatch/mcp-server"],
+      "env": { "LANGWATCH_API_KEY": "$LANGWATCH_API_KEY" }
+    }
+  }
+}
+```
+
+Docs tools (`fetch_scenario_docs`, `fetch_langwatch_docs`) need no key in either mode.
+
 ## Related tools
 
 - **[`@langwatch/mcp-server`](https://www.npmjs.com/package/@langwatch/mcp-server)** — the LangWatch MCP server these agents call for docs, traces, and platform access.
