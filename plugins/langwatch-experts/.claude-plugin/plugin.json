@@ -11,7 +11,7 @@
     "langwatch_api_key": {
       "type": "string",
       "title": "LangWatch API key",
-      "description": "Optional — leave blank for zero-config docs-only mode (the documentation tools work with no key). Set it to unlock live observability and platform tools (search_traces, get_trace, get_analytics, platform_* scenario/suite/run tools). Get a key at https://app.langwatch.ai/settings/api-keys. To set or change it after install: run /plugin, disable then re-enable langwatch-experts to re-open this prompt (this value is stored securely in your OS keychain, not settings.json).",
+      "description": "Optional — leave blank for zero-config docs-only mode (the documentation tools work with no key). Set it to unlock live observability and platform tools (search_traces, get_trace, get_analytics, platform_* scenario/suite/run tools). Get a key at https://app.langwatch.ai/settings/api-keys. To set or change it after install, run /plugin configure (or pass --config langwatch_api_key=<key> at install time); the value is stored securely in your OS keychain, not settings.json.",
       "sensitive": true
     },
     "langwatch_endpoint": {
