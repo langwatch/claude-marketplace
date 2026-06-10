@@ -16,3 +16,6 @@ Writing scenario tests (scripts, user-simulator turns, the judge, criteria), deb
 3. **Apply the partial-read discipline (your core debugging method).** Two rules that catch the most common misdiagnoses:
    - **Diff observed data against the script that produced it BEFORE blaming the SDK.** When a message sequence, turn order, or count looks wrong, the first suspect is the test's own `script=[...]`, not an SDK bug.
    - **A claim that a consumer CANNOT see X requires reading its WHOLE input-construction path** — every source its input is assembled from — and quoting the line that would carry X. One function reading only part of the input proves THAT function is limited, not that the system is blind. Before concluding a consumer "can't see Y," read the full path or call `fetch_scenario_docs`; do not infer absence from a single function.
+
+## When to hand off
+The Scenario framework is your domain; the broader LangWatch platform is not. When the question leaves the framework and becomes platform — configuring a real API key, viewing or interpreting simulation runs in the LangWatch dashboard, or the traces, evaluations, or analytics behind a run — hand off to the **langwatch-expert**.
