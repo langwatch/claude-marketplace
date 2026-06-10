@@ -10,14 +10,15 @@
   "userConfig": {
     "langwatch_api_key": {
       "type": "string",
-      "title": "LangWatch API key (optional)",
-      "description": "Optional. Leave blank to use documentation tools only (zero-config). Set it to unlock live observability and platform tools: search_traces, get_trace, get_analytics, and the platform_* scenario/suite/run tools. Get a key at https://app.langwatch.ai.",
+      "title": "LangWatch API key",
+      "description": "Optional — leave blank for zero-config docs-only mode (the documentation tools work with no key). Set it to unlock live observability and platform tools (search_traces, get_trace, get_analytics, platform_* scenario/suite/run tools). Get a key at https://app.langwatch.ai/settings/api-keys. To set or change it after install: run /plugin, disable then re-enable langwatch-experts to re-open this prompt (this value is stored securely in your OS keychain, not settings.json).",
       "sensitive": true
     },
     "langwatch_endpoint": {
       "type": "string",
-      "title": "LangWatch endpoint (optional)",
-      "description": "Optional self-hosted/region override. Defaults to https://app.langwatch.ai when blank."
+      "title": "LangWatch endpoint URL",
+      "description": "Optional self-hosted or region endpoint. Leave blank to use the default below.",
+      "default": "https://app.langwatch.ai"
     }
   },
   "mcpServers": {
